@@ -7,8 +7,8 @@ import Home from './Pages/Home';
 import HallOfFame from './Pages/HallOfFame';
 import SignIn from './Pages/SignIn';
 import SignUp from './Pages/SignUp';
-import PrivateRoute from './PrivateRoute';
-import HallOfFameReg from './Pages/HallOfFameReg';
+
+
 
 
 function App() {
@@ -19,7 +19,6 @@ function App() {
       <div className="App">
         <Route exact path='/' component={Home}/>
         <Route exact path="/HallOfFame" component={HallOfFame}/>
-        <PrivateRoute exact path ="/HallOfFameReg" component={HallOfFameReg}/>
         <Route exact path="/SignIn" component={SignIn}/>
         <Route exact path="/SignUp" component={SignUp}/>
 

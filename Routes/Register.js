@@ -9,13 +9,13 @@ require('dotenv').config();
 
 
 
-router.post('/register',[ 
+router.post('/',[ 
    
     body('Name', 'This field is mandatory').notEmpty(),
-    body('UserName').isString(),
-    body('Country').isAlpha(),
-    body('Email','Please enter a valid email').isEmail(),
-    body('Password','Password must have more than 4 caracters').isLength({ min: 5 })
+    body('UserName').isString().notEmpty(),
+    body('Country').isAlpha().notEmpty(),
+    body('Email','Please enter a valid email').isEmail().notEmpty(),
+    body('Password','Password must have more than 4 caracters').isLength({ min: 5 }).notEmpty()
 ], (req,res)=>{
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

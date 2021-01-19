@@ -10,7 +10,7 @@ require('dotenv').config();
 
 
 // call connected user
-router.get('/',authMiddleware, (req,res)=> {
+router.get('/', authMiddleware, (req,res)=> {
     User.findById(req.userId).select('-Password -__v')
     .then((user)=> {
         if (!user){
@@ -25,7 +25,7 @@ router.get('/',authMiddleware, (req,res)=> {
 })
 
 //login in
-router.post('/login',[ 
+router.post('/',[ 
     body('UserName','Please write your UserName').isString(),
     body('Password','Please write your Password').notEmpty()
 ],(req,res)=>{

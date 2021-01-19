@@ -3,13 +3,17 @@
 const express = require("express");
 const mongoose= require('mongoose');
 const connectDB = require('./config/connectDB');
+const cors = require('cors');
 
 require('dotenv').config();
 const app = express();
 
 connectDB(); //invoking the connection
-app.use(express.json()); // to parse the body req
 
+
+
+app.use(express.json()); 
+app.use(cors());
 
 
 
@@ -21,9 +25,9 @@ app.use(express.json()); // to parse the body req
 
 //calling the routes 
 app.use('/register', require('./Routes/Register'));
- app.use('/photos', require('./Routes/Photos'));
+app.use("/posts", require('./Routes/Posts'));
  app.use('/login', require('./Routes/Login'));
-
+ 
 
 
 //Starting the server

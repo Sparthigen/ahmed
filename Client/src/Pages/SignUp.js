@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import {useDispatch, useSelector,} from 'react-redux';
-import {registerUser} from '../Actions/authActions';
+import {registerUser,loadUser} from '../Actions/authActions';
 
 
 function SignUp({history}) {
@@ -17,10 +17,10 @@ const auth = useSelector((state) => state.auth);
 
 useEffect(()=> {
 if (auth.isAuth){
-history.push("/HallOfFameReg");
+history.push("/");
 }
 // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [auth.isAuth,]);
+}, [auth.isAuth]);
 
 const handleChange = e => {
   setInfo({...info, [e.target.name] : e.target.value})
@@ -28,6 +28,7 @@ const handleChange = e => {
 const registerNow = e => {
   e.preventDefault()
   dispatch(registerUser(info));
+  
 }
 
 

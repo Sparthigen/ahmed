@@ -1,7 +1,17 @@
 import { NavLink } from "react-router-dom";
 
+
+
+  
+  
+
+  
+
+
 const Menu = () => {
+
   return (
+    
     <>
       <div className="topnav">
         <div className="topnav-centered">
@@ -16,7 +26,7 @@ const Menu = () => {
           </NavLink>
         </div>
 
-   
+  
         <div className="topnav-right">
           <NavLink to="/SignIn">Sign In</NavLink>
         </div>
@@ -25,10 +35,10 @@ const Menu = () => {
           <NavLink to="/SignUp">Sign Up</NavLink>
         </div>
 
-        {/* <div className="topnav-right">
-          <NavLink to="/Niépcers">Niépcers</NavLink>
+        <div className="topnav-right">
+          <NavLink to="/Niépcers">Niepcers</NavLink>
         </div>
-       */}
+      
       </div>
       
     </>
